@@ -1,0 +1,24 @@
+header {
+	width: 100%;
+	height: 5em;
+}
+
+header div.header-container {
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header div.header-container div.header-item {
+	display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+header div.header-container div.header-item * {
+	color: var(--second-color);
+}

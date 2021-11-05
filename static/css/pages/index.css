@@ -1,0 +1,75 @@
+main {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+div.align-center {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+div.icon {
+	text-align: center;
+}
+
+div.icon svg {
+	stroke: var(--primary-color);
+	stroke-width: .5px;
+	transition: .2s;
+}
+
+div.info {
+    align-items: center;
+    transition: .2s;
+    word-wrap: normal;
+    display: flex;
+    flex-direction: column;
+    word-break: break-all;
+    gap: .5em;
+    text-align: center;
+    height: 10em;
+    white-space: pre-wrap;
+}
+
+div.info div.info-list {
+	display: flex;
+	gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 1em;
+}
+
+div.ns-dialog {
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: var(--third-color);
+	z-index: 9999;
+}
+
+div.ns-dialog div.ns-message {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.vh-center {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 780px) {
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: .8em;
+		padding-bottom: 2em;
+	}
+}
