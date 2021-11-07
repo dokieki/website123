@@ -33,6 +33,10 @@ div.info {
     white-space: pre-wrap;
 }
 
+div.info span {
+	font-size: 14px;
+}
+
 div.info div.info-list {
 	display: flex;
 	gap: 10px;

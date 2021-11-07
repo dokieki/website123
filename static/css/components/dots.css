@@ -4,6 +4,7 @@ ul.dot-nav-content-list {
     margin-block-start: 0;
     margin-block-end: 0;
     padding-inline-start: 0;
+    padding-bottom: 4.5em;
 }
 
 ul.dot-nav-content-list li {

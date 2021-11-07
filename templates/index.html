@@ -71,7 +71,9 @@
 								</div>
 								<div class="info">
 									<h1>Bablo</h1>
-									<span>0xaf4867d789F736cf7D7812722f85096A80c991Bc</span>
+									{% for wallet in bablo %}
+									<span>{{ wallet }}</span>
+									{% endfor %}
 								</div>
 							</div>
 						</li>

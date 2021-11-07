@@ -11,7 +11,8 @@ def index():
 		contacts = data['contacts'],
 		projects = data['projects'],
 		music = data['music'],
-		love = data['love']
+		love = data['love'],
+		bablo = data['bablo']
 	);
 
 @app.route('/lite')
