@@ -1,5 +1,4 @@
 from .config import Config
-from glob import glob
 from os import chdir
 from flask import Flask, render_template
 from flask_assets import Environment, Bundle

@@ -10,4 +10,4 @@ source $FULL_DIR/bin/activate
 
 pip3 install -r requirements.txt
 
-gunicorn "app:create_app()"
+gunicorn -b 127.0.0.1:$PORT "app:create_app()"
