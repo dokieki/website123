@@ -1,7 +1,0 @@
-div.chip {
-	padding: 5px;
-	min-width: 3em;
-	font-size: 16px;
-	border: 2px solid var(--second-color);
-	box-sizing: border-box;
-}
