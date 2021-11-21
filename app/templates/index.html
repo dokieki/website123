@@ -20,6 +20,7 @@
 		"css/components/dots.css",
 		"css/components/navbar.css",
 		"css/components/chip.css",
+		"css/components/text.css",
 		"css/pages/index.css"
 	%}
 	<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
@@ -47,35 +48,38 @@
 			<div class="navbar-item">
 				<i data-feather="info"></i>
 				<div class="navbar-border">
-					<span>Каво</span>
+					<p>Каво</p>
 				</div>
 			</div>
 			<div class="navbar-item blue">
 				<i data-feather="activity"></i>
 				<div class="navbar-border">
-					<span>Склад</span>
+					<p>Склад</p>
 				</div>
 			</div>
 			<div class="navbar-item green">
 				<i data-feather="music"></i>
 				<div class="navbar-border">
-					<span>Крутая музыка</span>
+					<p>Крутая музыка</p>
 				</div>
 			</div>
 			<div class="navbar-item purple">
 				<i data-feather="link"></i>
 				<div class="navbar-border">
-					<span>Где я</span>
+					<p>Где я</p>
+				</div>
+			</div>
+			<div class="navbar-item yellow">
+				<i data-feather="dollar-sign"></i>
+				<div class="navbar-border">
+					<p>Что-то делаю</p>
 				</div>
 			</div>
 		</div>
-
 		<div class="left-navbar-items" id="left-nav-items">
-
 			<div class="left-navbar-item vh-center">
 				<div class="dot-nav" id="main-info">
 					<ul class="dot-nav-content-list">
-						
 						<li>
 							<div class="align-center">
 								<div class="icon">
@@ -84,7 +88,7 @@
 								<div class="info">
 									<h1>Bablo</h1>
 									{% for wallet in bablo %}
-									<span>{{ wallet }}</span>
+									<p>{{ wallet }}</p>
 									{% endfor %}
 								</div>
 							</div>
@@ -96,7 +100,7 @@
 								</div>
 								<div class="info">
 									<h1>Хто я</h1>
-									<span>Сижу херню пишу, иногда на си, иногда что-то в вебе</span>
+									<p>Сижу херню пишу, иногда на си, иногда что-то в вебе</p>
 								</div>
 							</div>
 						</li>
@@ -107,36 +111,30 @@
 								</div>
 								<div class="info">
 									<h1>Обожаю</h1>
-									<span>{{ ', '.join(love) }}</span>
+									<p>{{ ', '.join(love) }}</p>
 								</div>
 							</div>
 						</li>
-
 					</ul>
 					<div class="dot-nav-dots"></div>
 				</div>
 			</div>
-		
 			<div class="left-navbar-item vh-center">
-				
 				<div class="align-center">
 					<div class="icon">
 						<i data-feather="activity"></i>
 					</div>
 					<div class="info">
 						<h1>Мой склад</h1>
-						<span>Пока все переезжают на гитлаб, я заполняю мусором гитхаб</span>
+						<p>Пока все переезжают на гитлаб, я заполняю мусором гитхаб</p>
 						{% for project in projects %}
 						<a href="{{ projects[project]}}">{{ project }}</a>
 						{% endfor %}
-						<span>Надеюсь вскоре тут будет что-нибудь серьезное</span>
+						<p>Надеюсь вскоре тут будет что-нибудь серьезное</p>
 					</div>
 				</div>
-
 			</div>
-			
 			<div class="left-navbar-item vh-center">
-				
 				<div class="align-center">
 					<div class="icon">
 						<i data-feather="music"></i>
@@ -150,29 +148,37 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
-
 			<div class="left-navbar-item vh-center">
-
 				<div class="align-center">
 					<div class="icon">
 						<i data-feather="link"></i>
 					</div>
 					<div class="info">
 						<h1>Где я</h1>
-						<span>В основном тусуюсь там:</span>
+						<p>В основном тусуюсь там:</p>
 						{% for contact in contacts %}
 						<a href="{{ contacts[contact] }}">{{ contact }}</a>
 						{% endfor %}
 					</div>
 				</div>
-
+			</div>
+			<div class="left-navbar-item vh-center">
+				<div class="align-center">
+					<div class="icon">
+						<i data-feather="dollar-sign"></i>
+					</div>
+					<div class="info">
+						<h1>Что-то делаю</h1>
+						<p>Когда нечего делать пишу сайты или делаю <span class="digital">ДиДжиТаЛ ДиЗаЙн</span> za bablo</p>
+						{% for description in price %}
+						<p><span class="money">{{ price[description] }}$</span> - {{ description }}</p>
+						{% endfor %}
+					</div>
+				</div>
 			</div>
 		</div>
-
 	</main>
-
 	<script>
 		feather.replace({
 			width: 86,

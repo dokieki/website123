@@ -14,6 +14,11 @@ a {
 	color: var(--primary-color);
 }
 
+p {
+	margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
 body, html {
 	height: 100%;
 	width: 100%;

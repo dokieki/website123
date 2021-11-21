@@ -64,5 +64,10 @@
 		"Telegram": "https://t.me/joinchat/l7ydozB0ZcUzNTNi",
 		"Github": "https://github.com/dokieki",
 		"VK": "https://vk.com/coolpenis69"
+	},
+	"price": {
+		"Обычная карточка без верстки (~3 часа)": 6.75,
+		"Обычная карточка (~7 часов)": 13.5,
+		"Веб-Приложение, цена зависит от функционала (>2 дня)": ">27"
 	}
 }

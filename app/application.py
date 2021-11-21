@@ -12,7 +12,9 @@ def create_app():
 
 	assets.init_app(app);
 
-	# app.config['ASSETS_DEBUG'] = True
+	app.config['ASSETS_DEBUG'] = True
+
+	app.debug = True;
 
 	@app.route('/')
 	def index():
@@ -23,7 +25,8 @@ def create_app():
 			projects = data['projects'],
 			music = data['music'],
 			love = data['love'],
-			bablo = data['bablo']
+			bablo = data['bablo'],
+			price = data['price']
 		);
 
 	@app.route('/lite')

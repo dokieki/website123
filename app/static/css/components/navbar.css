@@ -50,7 +50,7 @@ div.navbar div.navbar-item.current div.navbar-border {
 	border-radius: 3px;
 }
 
-div.navbar div.navbar-item div.navbar-border span {
+div.navbar div.navbar-item div.navbar-border p {
 	font-size: 0;
 	font-weight: 600;
 	color: var(--second-color);
@@ -63,7 +63,7 @@ div.navbar div.navbar-item:not(.current):hover > div.navbar-border {
 }
 
 
-div.navbar div.navbar-item:not(.current):hover > div.navbar-border span {
+div.navbar div.navbar-item:not(.current):hover > div.navbar-border p {
 	font-size: 12px;
 }
 
@@ -94,6 +94,14 @@ div.navbar div.navbar-item.purple svg {
 
 div.navbar div.navbar-item.purple div.navbar-border {
 	background: #b187e5;
+}
+
+div.navbar div.navbar-item.yellow svg {
+	stroke: #e5e087;
+}
+
+div.navbar div.navbar-item.yellow div.navbar-border {
+	background: #e5e087;
 }
 
 div.left-navbar-item {
