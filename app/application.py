@@ -3,6 +3,7 @@ from os import chdir
 from flask import Flask, render_template
 from flask_assets import Environment, Bundle
 from json import load
+from datetime import datetime
 
 def create_app():
 	chdir(Config.BASE_DIR);
@@ -19,8 +20,18 @@ def create_app():
 	@app.route('/')
 	def index():
 		data = load(open('data.json', 'r'));
+		file = 'index.html';
+		files = {
+			12: 'day/christmas.html',
+			1: 'day/christmas.html'
+		};
 
-		return render_template('index.html',
+		try:
+			file = files[datetime.now().month];
+		except KeyError:
+			file = 'index.html';
+
+		return render_template(file,
 			contacts = data['contacts'],
 			projects = data['projects'],
 			music = data['music'],

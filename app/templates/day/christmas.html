@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta content="opa opa" property="og:title">
+	<meta content="/static/assets/trap.jpg" property="og:image">
+	<meta content="А че сюда писать" property="og:description">
+	<meta name="description" content="А че сюда писать">
+	<meta name="theme-color" content="#DB86D3">
+	
+	<title>Cool title</title>
+	
+	<link rel="shortcut icon" href="/static/assets/icon.png" type="image/png">
+
+	{% assets
+		filters="cssmin",
+		output="build/main.css",
+		"css/base.css",
+		"css/components/dots.css",
+		"css/components/navbar.css",
+		"css/components/chip.css",
+		"css/components/text.css",
+		"css/pages/index.css"
+	%}
+	<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+	{% endassets %}
+
+	<script src="https://unpkg.com/feather-icons"></script>
+	{% assets
+		filters="rjsmin",
+		output="build/main.js",
+		"js/swipe.js",
+		"js/dots.js",
+		"js/left-navbar.js"
+	%}
+	<script type="text/javascript" src="{{ ASSET_URL }}"></script>
+	{% endassets %}
+	<script type="text/javascript" src="/static/js/snowstorm.js"></script>
+</head>
+<body>
+	<noscript class="align-center">
+		<div class="ns-dialog">
+			<div class="ns-message">Чот ты дурак, иди на <a href="/lite">хуй</a></div>
+		</div>
+	</noscript>
+	<main>
+		<div class="navbar" id="leftnav">
+			<div class="navbar-item">
+				<i data-feather="info"></i>
+				<div class="navbar-border">
+					<p>Каво</p>
+				</div>
+			</div>
+			<div class="navbar-item blue">
+				<i data-feather="activity"></i>
+				<div class="navbar-border">
+					<p>Склад</p>
+				</div>
+			</div>
+			<div class="navbar-item green">
+				<i data-feather="music"></i>
+				<div class="navbar-border">
+					<p>Крутая музыка</p>
+				</div>
+			</div>
+			<div class="navbar-item purple">
+				<i data-feather="link"></i>
+				<div class="navbar-border">
+					<p>Где я</p>
+				</div>
+			</div>
+			<div class="navbar-item yellow">
+				<i data-feather="dollar-sign"></i>
+				<div class="navbar-border">
+					<p>Что-то делаю</p>
+				</div>
+			</div>
+		</div>
+		<div class="left-navbar-items" id="left-nav-items">
+			<div class="left-navbar-item vh-center">
+				<div class="dot-nav" id="main-info">
+					<ul class="dot-nav-content-list">
+						<li>
+							<div class="align-center">
+								<div class="icon">
+									<i data-feather="dollar-sign"></i>
+								</div>
+								<div class="info">
+									<h1>Bablo</h1>
+									{% for wallet in bablo %}
+									<p>{{ wallet }}</p>
+									{% endfor %}
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="align-center">
+								<div class="icon">
+									<i data-feather="info"></i>
+								</div>
+								<div class="info">
+									<h1>Хто я</h1>
+									<p>Сижу херню пишу, иногда на си, иногда что-то в вебе</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="align-center">
+								<div class="icon">
+									<i data-feather="heart"></i>
+								</div>
+								<div class="info">
+									<h1>Обожаю</h1>
+									<p>{{ ', '.join(love) }}</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="dot-nav-dots"></div>
+				</div>
+			</div>
+			<div class="left-navbar-item vh-center">
+				<div class="align-center">
+					<div class="icon">
+						<i data-feather="activity"></i>
+					</div>
+					<div class="info">
+						<h1>Мой склад</h1>
+						<p>Пока все переезжают на гитлаб, я заполняю мусором гитхаб</p>
+						{% for project in projects %}
+						<a href="{{ projects[project]}}">{{ project }}</a>
+						{% endfor %}
+						<p>Надеюсь вскоре тут будет что-нибудь серьезное</p>
+					</div>
+				</div>
+			</div>
+			<div class="left-navbar-item vh-center">
+				<div class="align-center">
+					<div class="icon">
+						<i data-feather="music"></i>
+					</div>
+					<div class="info">
+						<h1>Типичный плейлист трансгендера</h1>
+						<div class="info-list">
+							{% for author in music %}
+							<div class="chip">{{ author }}</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="left-navbar-item vh-center">
+				<div class="align-center">
+					<div class="icon">
+						<i data-feather="link"></i>
+					</div>
+					<div class="info">
+						<h1>Где я</h1>
+						<p>В основном тусуюсь там:</p>
+						{% for contact in contacts %}
+						<a href="{{ contacts[contact] }}">{{ contact }}</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="left-navbar-item vh-center">
+				<div class="align-center">
+					<div class="icon">
+						<i data-feather="dollar-sign"></i>
+					</div>
+					<div class="info">
+						<h1>Что-то делаю</h1>
+						<p>Когда нечего делать пишу сайты или делаю <span class="digital">ДиДжиТаЛ ДиЗаЙн</span> za bablo</p>
+						{% for description in price %}
+						<p><span class="money">{{ price[description] }}$</span> - {{ description }}</p>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script>
+		feather.replace({
+			width: 86,
+			height: 86,
+			'stroke-width': 1,
+		});
+		leftNavbar('#leftnav', 0, '#left-nav-items');
+		dots('#main-info', 0);
+
+		snowStorm.flakesMaxActive = 70;
+		snowStorm.followMouse = false;
+		snowStorm.freezeOnBlur = false;
+	</script>
+</body>
+</html>

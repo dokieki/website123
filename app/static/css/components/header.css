@@ -1,6 +1,6 @@
 header {
 	width: 100%;
-	height: 5em;
+	height: 3.5em;
 }
 
 header div.header-container {
@@ -8,15 +8,30 @@ header div.header-container {
     width: 90%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 header div.header-container div.header-item {
-	display: flex;
+    width: 36px;
+    height: 36px;
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
+    border: 1px solid var(--second-color);
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+header div.header-container div.header-item svg {
+    width: 26px;
+    stroke-width: 2px;
+}
+
+header div.header-container div.header-item.active {
+    background: var(--primary-color);
 }
 
 header div.header-container div.header-item * {
